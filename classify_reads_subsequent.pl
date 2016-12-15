@@ -18,10 +18,9 @@ classify_reads_subsequent.pl
 
 =head1 DESCRIPTION
 
-This script wraps the preprocessing and classification of multiple fastq files.
-Input are multiple unjoined ITS2 read fastq files and output is a folder with a tax_table and otu_table for import into phyloseq.
-The intermediate files are also preserved.
-The steps are join (with fastq-join), filter (with usearch), classify (with usearch or RDPclassifier), count, aggregate and convert.
+This script is a modification of a previous script written by Alexander Keller and Markus Ankenbrand, which wraps the preprocessing and classification of multiple fastq files.
+Use this script if you have already run your unjoined fastq files through their bioinformatics pipeline to identify ITS2 reads, but you want to also identify rbcL reads (or another marker). In this case you will have already run the steps to
+join (with fastq-join), and filter (with usearch) sequences.  You will just need to classify (with usearch or RDPclassifier), count, aggregate and convert.
 Requirements (tested versions): fastq-join (Version 1.01.759), usearch (Version v8.0.1477)[, RDPclassifier (Version 2.10.2)]
 The readfiles have to be ordered (alternating first read file and second read file of the same sample).
 With most naming schemes this should be automatically the case when using wildcards but be aware of this requirement if you face problems.
@@ -178,6 +177,8 @@ while(@ARGV>0){
     my $r2 = shift(@ARGV);
     my @suffix = (".fq", ".fastq");
     my $base = basename($r1,@suffix);
+    
+    	# The steps of joining and filtering the fastq reads have been removed. We assume that this has already been done in the ITS2 analysis.
 
     if($opt_utax){
 	# Classify with utax
@@ -247,12 +248,12 @@ sub aggregate_and_convert{
 
 =head1 LIMITATIONS
 
-If you encounter a bug, feel free to contact Markus Ankenbrand
-
 =head1 AUTHORS
 
 =over
 
 =item * Markus Ankenbrand, markus.ankenbrand@uni-wuerzburg.de
+
+	# modified by Karen Bell from original script by Markus Ankenbrand
 
 =back
