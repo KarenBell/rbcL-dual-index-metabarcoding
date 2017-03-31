@@ -4,7 +4,7 @@ This method uses the bioinformatics pipeline described in Sickel et al. (2015), 
 # Dependencies
 •	Meta-barcoding dual-indexing bioinformatics pipeline (https://github.com/molbiodiv/meta-barcoding-dual-indexing) and all dependencies described therein.
 
-•	rbcL database trained for RDP and UTAX identifications (https://dx.doi.org/10.6084/m9.figshare.c.3466311) 
+•	rbcL database trained for RDP and UTAX identifications (https://doi.org/10.6084/m9.figshare.c.3466311.v1) 
 
 # Meta-barcoding Dual-Indexing multiplexed rbcL and ITS2
 Follow the instructions at https://github.com/molbiodiv/meta-barcoding-dual-indexing to identify ITS2 sequences.
@@ -23,7 +23,7 @@ Since you have already joined and filtered your sequence data, you can skip thes
 
 Rename this version of the script “classify_reads_subsequent.pl”. This modified script is also available here on this repository.
 
-Download the RDP and UTAX trained databases for rbcL identification (https://dx.doi.org/10.6084/m9.figshare.c.3466311), and place them in the “myanalyses”. Unzip the files “rbcL_rdp_trained” and “rbcL_utax_trained”.
+Download the RDP and UTAX trained databases for rbcL identification (https://doi.org/10.6084/m9.figshare.c.3466311.v1), and place them in the “myanalyses”. Unzip the files “rbcL_rdp_trained” and “rbcL_utax_trained”.
 
 In the “myanalyses” directory, run the following command to classify and aggregate rbcL sequences for all samples:
 
@@ -38,7 +38,7 @@ Follow the instructions at https://github.com/molbiodiv/meta-barcoding-dual-inde
 
 Make a new directory inside the “meta-barcoding-dual-indexing” directory. Name it “myanalyses”.
 
-Download the RDP and UTAX trained databases for rbcL identification (https://dx.doi.org/10.6084/m9.figshare.c.3466311), and place them in the “myanalyses”. Unzip the files “rbcL_rdp_trained” and “rbcL_utax_trained”.
+Download the RDP and UTAX trained databases for rbcL identification (https://doi.org/10.6084/m9.figshare.c.3466311.v1), and place them in the “myanalyses”. Unzip the files “rbcL_rdp_trained” and “rbcL_utax_trained”.
 
 Put all your fastq read files in an empty directory.
 
